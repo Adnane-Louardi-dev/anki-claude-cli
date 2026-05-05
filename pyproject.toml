@@ -1,3 +1,60 @@
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "anki-cli-unofficial"
+version = "1.1.0"
+description = "AI-powered CLI to generate Anki flashcards from YAML, PDFs, and notes — built with Claude Code."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Julien Sobczak" },
+]
+maintainers = [
+    { name = "Adnane Louardi", email = "adnanelouardi.dev@gmail.com" },
+]
+keywords = ["anki", "flashcards", "spaced-repetition", "claude-code", "ai-agents", "anthropic"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Education",
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "anki>=2.1.50,<2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+anki-cli-unofficial = "ankicli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/julien-sobczak/anki-cli"
+Issues = "https://github.com/julien-sobczak/anki-cli/issues"
+
+[tool.setuptools.packages.find]
+include = ["ankicli*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]

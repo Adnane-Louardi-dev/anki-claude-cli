@@ -1,5 +1,0 @@
-#!/usr/bin/env python
-# See https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html
-
-from ankicli import cli
-cli.main()

@@ -1,5 +1,41 @@
-anki_cli_unofficial.egg-info/
-/build/
-/dist/
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Pipeline artifacts (per-job working dirs and final decks)
+out/
 *.apkg
+
+# Pipeline artifacts at repo root (older runs may have dropped these here)
+/cards.yaml
+/drafts.yaml
+/concept-outline.json
+
+# Inputs are user-supplied — keep the directory, ignore its contents
+inputs/*
+!inputs/.gitkeep
+inputs/processed/
+
+# Media is generated — keep the directory, ignore its contents
+media/*
+!media/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
