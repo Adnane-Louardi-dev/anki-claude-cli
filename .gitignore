@@ -34,6 +34,9 @@ inputs/processed/
 media/*
 !media/.gitkeep
 
+# Claude Code local-only files (allow-lists, machine paths)
+.claude/settings.local.json
+
 # IDE
 .idea/
 .vscode/
