@@ -30,7 +30,7 @@ def parse_cards(path):
   (note type and field names exist in the collection) happens later in
   `Loader.load`.
   """
-  with open(path) as file:
+  with open(path, encoding='utf-8') as file:
     cards = yaml.full_load(file) or []
 
   if not isinstance(cards, list):
