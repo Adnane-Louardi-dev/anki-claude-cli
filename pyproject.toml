@@ -36,6 +36,9 @@ dev = [
     "pytest-cov>=4.0",
     "ruff>=0.5",
 ]
+pipeline = [
+    "pymupdf>=1.23",
+]
 
 [project.scripts]
 anki-cli-unofficial = "ankicli.cli:main"
